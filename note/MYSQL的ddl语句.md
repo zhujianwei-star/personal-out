@@ -20,7 +20,7 @@
 ### U：Update：修改
 
 修改数据库的字符集：alter database 数据库名称 character set 字符集名;
-                
+               
 ### D：Delete：删除
 
 删除数据库：drop database 数据库名称;
@@ -79,7 +79,7 @@ CREATE INDEX idx_update_action_org_status USING BTREE ON sourcedata_record (upda
 ### R：Retrieve：查询
 
 查询某个数据库中所有表的名称：show tables;
-查询某个表的字符集/查询某个表的创建语句：show create table 表名称;
+查询某个表的字符集/查询某个表的创建语句：show create table 表名称;
 查询表结构：desc 表名;
 
 ### U：Update：修改
@@ -95,20 +95,20 @@ CREATE INDEX idx_update_action_org_status USING BTREE ON sourcedata_record (upda
 
 修改表中当前名称的列所有信息，此处可以改字段名称
 
-ALTER TABLE dmp.data_asset_tableinfo CHANGE DAT_System DAT_Source bigint(255)  NOT NULL COMMENT '数据源';
+ALTER TABLE dmp.data_asset_tableinfo CHANGE DAT_System DAT_Source bigint(255)  NOT NULL COMMENT '数据源';
 
 // 不可以修改字段名称
 
-ALTER TABLE dmp.data_asset_tableinfo MODIFY COLUMN DAT_Source bigint(255) NOT  NULL COMMENT '数据源';
+ALTER TABLE dmp.data_asset_tableinfo MODIFY COLUMN DAT_Source bigint(255) NOT  NULL COMMENT '数据源';
 
-ALTER TABLE dmp.data_asset_tableinfo ADD DTA_System varchar(255) NULL COMMENT  '隶属数据库系统';
+ALTER TABLE dmp.data_asset_tableinfo ADD DTA_System varchar(255) NULL COMMENT  '隶属数据库系统';
 ```
 
 设置某个字段的默认值：
-1. alter table 表名 alter column 字段名 drop default; // 需要先删除其默认值
-2. alter table 表名 alter column 字段名 set default 默认值; // 重新设置默认值
-                        删除列：atler table 表名 drop 列名;
-                        
+1. alter table 表名 alter column 字段名 drop default; // 需要先删除其默认值
+2. alter table 表名 alter column 字段名 set default 默认值; // 重新设置默认值
+                       删除列：atler table 表名 drop 列名;
+                       
 ```sql
 -- 设置已有列自动增长：
 alter table tabel_name modify 列名 数据类型 auto_increment;
